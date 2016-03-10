@@ -16,7 +16,7 @@ export default React.createClass({
 			))}
 
 			<button 
-				class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+				className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
 				onClick={this.props.handlePersonAdd}>Add Person</button>
 		</div>;
 	}

@@ -14,7 +14,7 @@ const App = React.createClass({
 				{ name: 'Esa', desc: 'kova ukko' },
 				{ name: 'Kaija', desc: 'vielä kovempi' }
 			],
-			activePerson:{}
+			activePerson: {}
 		};
 	},
 
@@ -26,22 +26,35 @@ const App = React.createClass({
 				handlePersonChange={(person) =>
 					this.setState({
 						activePerson:person
-					})
-				}
-				handlePersonAdd={ (e) => {
+				})}
+
+				handlePersonAdd={(e) => {
 					var name = prompt('Name'),
 							desc = prompt('Description'),
 							persons =  this.state.persons;
-					if(name) {
-						persons.push({name:nam, desc:desc})
+					if (name) {
+						persons.push({name:name, desc:desc})
 						this.setState({
 							persons:persons
 						})
+					}}
+				}/>
+
+			<PersonDetail 
+				model={this.state.activePerson}
+				handleDetailAdd={newDetail => {
+					console.log(this.state.activePerson, newDetail);
+
+					if (!this.state.activePerson.name) {
+						console.log('no active person selected');
+						return;
 					}
-					}
-				}
-				/>
-			<PersonDetail model={this.state.activePerson} />
+
+					this.state.activePerson.detailsList = this.state.activePerson.details || [];
+					this.state.activePerson.detailsList.push(newDetail);
+
+					this.setState({ activePerson });
+				}} />
     </div>;
   }
 });

@@ -8,7 +8,7 @@ export default React.createClass({
 		return <div className="person__list">
 			{this.props.persons.map((person, i) => (
 				<PersonItem 
-					onClick={this.props.handlePersonChange(person)}
+					onClick={() => this.props.handlePersonChange(person)}
 					model={person} 
 					key={i} />
 			))}

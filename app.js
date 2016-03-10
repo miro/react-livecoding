@@ -27,8 +27,8 @@ const App = React.createClass({
 					this.setState({
 						activePerson:person
 					})
-				}}/>
-			<PersonDetail person={this.state.activePerson} />
+				}/>
+			<PersonDetail model={this.state.activePerson} />
     </div>;
   }
 });

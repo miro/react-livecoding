@@ -3,10 +3,30 @@
 <head>
   <title></title>
   <meta charset="utf-8">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="root"></div>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">CV Master</span>
+
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">CV Master</span>
+
+  </div>
+  <main class="mdl-layout__content">
+      <div id="root"></div>
+  </main>
+</div>
 
   <script type="text/javascript" src="bundle.js"></script>
 </body>

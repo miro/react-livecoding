@@ -4,6 +4,8 @@ import PersonItem from './PersonItem.jsx';
 
 export default React.createClass({
 
+
+
 	render: function() {
 		return <div className="person__list">
 			{this.props.persons.map((person, i) => (
@@ -12,6 +14,10 @@ export default React.createClass({
 					model={person} 
 					key={i} />
 			))}
+
+			<button 
+				class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+				onClick={this.props.handlePersonAdd}>Add Person</button>
 		</div>;
 	}
 });

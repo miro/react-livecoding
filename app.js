@@ -20,14 +20,27 @@ const App = React.createClass({
 
   render: function() {
     return <div className="site__wrapper">
-    	<h2>CV tietokanta 6000+</h2>
+
 			
 			<PersonList persons={this.state.persons} 
 				handlePersonChange={(person) =>
 					this.setState({
 						activePerson:person
 					})
-				}/>
+				}
+				handlePersonAdd={ (e) => {
+					var name = prompt('Name'),
+							desc = prompt('Description'),
+							persons =  this.state.persons;
+					if(name) {
+						persons.push({name:nam, desc:desc})
+						this.setState({
+							persons:persons
+						})
+					}
+					}
+				}
+				/>
 			<PersonDetail model={this.state.activePerson} />
     </div>;
   }
